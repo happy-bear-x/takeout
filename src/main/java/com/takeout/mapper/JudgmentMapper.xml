@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.takeout.mapper.JudgmentMapper" >
+  <resultMap id="BaseResultMap" type="com.takeout.pojo.Judgment" >
+    <id column="ordernum" property="ordernum" jdbcType="VARCHAR" />
+    <id column="user" property="user" jdbcType="VARCHAR" />
+    <result column="shop" property="shop" jdbcType="VARCHAR" />
+    <result column="score" property="score" jdbcType="DECIMAL" />
+    <result column="judge" property="judge" jdbcType="VARCHAR" />
+    <result column="judgetime" property="judgetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ordernum, user, shop, score, judge, judgetime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.pojo.JudgmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from judgment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.takeout.pojo.JudgmentKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from judgment
+    where ordernum = #{ordernum,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.takeout.pojo.JudgmentKey" >
+    delete from judgment
+    where ordernum = #{ordernum,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.takeout.pojo.JudgmentExample" >
+    delete from judgment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.takeout.pojo.Judgment" >
+    insert into judgment (ordernum, user, shop, 
+      score, judge, judgetime
+      )
+    values (#{ordernum,jdbcType=VARCHAR}, #{user,jdbcType=VARCHAR}, #{shop,jdbcType=VARCHAR}, 
+      #{score,jdbcType=DECIMAL}, #{judge,jdbcType=VARCHAR}, #{judgetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.takeout.pojo.Judgment" >
+    insert into judgment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ordernum != null" >
+        ordernum,
+      </if>
+      <if test="user != null" >
+        user,
+      </if>
+      <if test="shop != null" >
+        shop,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="judge != null" >
+        judge,
+      </if>
+      <if test="judgetime != null" >
+        judgetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ordernum != null" >
+        #{ordernum,jdbcType=VARCHAR},
+      </if>
+      <if test="user != null" >
+        #{user,jdbcType=VARCHAR},
+      </if>
+      <if test="shop != null" >
+        #{shop,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=DECIMAL},
+      </if>
+      <if test="judge != null" >
+        #{judge,jdbcType=VARCHAR},
+      </if>
+      <if test="judgetime != null" >
+        #{judgetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.takeout.pojo.JudgmentExample" resultType="java.lang.Integer" >
+    select count(*) from judgment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update judgment
+    <set >
+      <if test="record.ordernum != null" >
+        ordernum = #{record.ordernum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.user != null" >
+        user = #{record.user,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shop != null" >
+        shop = #{record.shop,jdbcType=VARCHAR},
+      </if>
+      <if test="record.score != null" >
+        score = #{record.score,jdbcType=DECIMAL},
+      </if>
+      <if test="record.judge != null" >
+        judge = #{record.judge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.judgetime != null" >
+        judgetime = #{record.judgetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update judgment
+    set ordernum = #{record.ordernum,jdbcType=VARCHAR},
+      user = #{record.user,jdbcType=VARCHAR},
+      shop = #{record.shop,jdbcType=VARCHAR},
+      score = #{record.score,jdbcType=DECIMAL},
+      judge = #{record.judge,jdbcType=VARCHAR},
+      judgetime = #{record.judgetime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.pojo.Judgment" >
+    update judgment
+    <set >
+      <if test="shop != null" >
+        shop = #{shop,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=DECIMAL},
+      </if>
+      <if test="judge != null" >
+        judge = #{judge,jdbcType=VARCHAR},
+      </if>
+      <if test="judgetime != null" >
+        judgetime = #{judgetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ordernum = #{ordernum,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.takeout.pojo.Judgment" >
+    update judgment
+    set shop = #{shop,jdbcType=VARCHAR},
+      score = #{score,jdbcType=DECIMAL},
+      judge = #{judge,jdbcType=VARCHAR},
+      judgetime = #{judgetime,jdbcType=TIMESTAMP}
+    where ordernum = #{ordernum,jdbcType=VARCHAR}
+      and user = #{user,jdbcType=VARCHAR}
+  </update>
+</mapper>

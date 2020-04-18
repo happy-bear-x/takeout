@@ -1,0 +1,57 @@
+<%@page pageEncoding="UTF-8"%>
+<%
+	String userpic="img/headpic/default.jpg";
+	String src="Login";
+	String nicname="请您先<a href='./Login'>登录</a>";
+	String manage="";
+	boolean isshop=false;
+	if (session.getAttribute("user")!=null) {
+		if(session.getAttribute("type").equals("1")){
+			isshop=true;
+			manage="<a href='./manage.jsp'>商品管理</a>";
+		}
+		out.print("<script>islogin=true; </script>");
+		src="User";
+		nicname=(String)session.getAttribute("nicname");
+		if(session.getAttribute("headpic")!=null&&!session.getAttribute("headpic").equals("")){
+			userpic=(String) session.getAttribute("headpic");
+			}
+		}else{
+		out.print("<script>islogin=false; </script>");
+		}
+%>
+<style>
+#user {
+	text-align: center;
+	position: fixed;
+	right: -80px;
+	top: 3px;
+	width: 190px;
+	height: 200px;
+	border-radius: 10px;
+	background: #fff;
+	visibility: hidden;
+}
+</style>
+<div id="user">
+	<a href="<%=src%>"><img alt="用户头像" src="<%=userpic%>"></a>
+	<div id="logout" class=loginmenu><a href="Exit">退出</a></div>
+	<div><%=nicname%></div>
+	<div><%=manage %></div>
+	<%if(isshop){
+	 out.print("<a href='./shoporder.jsp'>商家订单</a>");
+	} %>
+	<div class="loginmenu"><a href="./order.jsp">我的订单</a> </div>
+	<div class="loginmenu"><a href="./updatepsw.jsp">修改密码</a> </div>
+
+	
+</div>
+<script> 
+if(islogin){
+}else{
+	loginm=document.getElementsByClassName("loginmenu");
+	for (var i = 0; i<loginm.length;i++) {
+		 	loginm[i].style.display="none";
+		 };
+}
+</script>

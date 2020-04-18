@@ -1,0 +1,20 @@
+<%@page pageEncoding="UTF-8"%>
+<style>
+ul{
+list-style:none;
+}
+a{
+ color:#00f;
+}
+</style>
+<div class="mid-left">
+	<div>
+		常用功能：
+		<ul>
+			<li><a href="./User">个人中心</a></li>
+			<li><a href="./Account">我的账户</a></li>
+			<li><a href="./order.jsp">我的订单</a></li>
+			<li><a href="./register.jsp">注册商家</a></li>
+		</ul>
+	</div>
+</div>

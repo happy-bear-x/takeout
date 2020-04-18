@@ -1,0 +1,18 @@
+.managebox{
+	margin:20px auto;
+	overflow:auto;
+}
+input{
+	width:170px;
+}
+#revise tr{
+	width:250px;
+}
+.cancel{
+	width:100px;
+	float:left;
+}
+.sub{
+	width:100px;
+	float:right;
+}

@@ -1,0 +1,36 @@
+.headpic {
+	margin: 0 auto;
+	border-radius: 50px;
+	width: 100px;
+	height: 100px;
+	display: block;
+}
+
+.infoline {
+	margin: 5px 0;
+	margin-left: 200px;
+	width: 100%;
+	font-size: 20px;
+}
+
+.newheadpic {
+	display: none;
+}
+
+.changebutton {
+	color:#fff;
+	background: #ff8000;
+	width: 120px;
+	height: 30px;
+	border: solid 2px #ff8000;
+	border-radius: 10px 10px 10px 10px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	font-size:18px;
+	text-align:center;
+	display:inline-block;
+}
+.changebutton:hover{
+	background:#ffb071;
+	border: solid 2px #ffb071;
+}

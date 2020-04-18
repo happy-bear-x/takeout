@@ -1,0 +1,16 @@
+<%@page pageEncoding="UTF-8"%>
+<div class="top">
+	<div class="logo">
+		<a href="./"><img src="./img/page/logo.jpg"></a>
+	</div>
+	<div>
+		<h1><%=pagetitle%></h1>
+	</div>
+	<a href="./position.jsp" id="login">成都/都江堰/青城山</a>
+	<div class="search">
+		<form action="./findfoods.jsp" class="find" method="post">
+			<input type="search" name="find" id="find" placeholder="您想吃点什么？">
+			<a href=""><input id="findbut" type="submit" value="点击搜索"></a>
+		</form>
+	</div>
+</div>

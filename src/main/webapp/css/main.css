@@ -1,0 +1,239 @@
+body {
+	background: #e5e5e5;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+.main {
+	width: 1060px;
+	margin: 0 auto;
+	border: solid 1px #c0c0c0;
+	overflow: hidden;
+	position: relative;
+	padding: 10px;
+	background: #f5f5f5;
+	overflow-y: auto;
+	padding-bottom:100px;
+}
+
+h1 {
+	margin-left: 300px;
+}
+
+.top {
+	height: 150px;
+	width: 100%;
+	background: #f4f4f4;
+}
+
+.top div {
+	float: left;
+}
+
+#login {
+	float: right;
+}
+
+.logo {
+	width: 160px;
+	height: 150px;
+}
+
+.logo img {
+	width: 160px;
+	height: 140px;
+	border-radius: 50px;
+	border: solid 2px #ff8000;
+}
+
+#find {
+	margin-left: 65px;
+	width: 525px;
+	height: 40px;
+	border: solid 2px #ff8000;
+	border-radius: 10px 0 0 10px;
+	padding-left: 10px;
+	float: left;
+	box-sizing: border-box;
+	font-size: 1em;
+}
+
+#findbut {
+	background: #ff8000;
+	width: 80px;
+	height: 40px;
+	border: solid 2px #ff8000;
+	border-radius: 0 10px 10px 0px;
+	box-sizing: border-box;
+	vertical-align: middle;
+	font-size: 1em;
+}
+
+.mid {
+	background: #f5f5f5;
+	overflow: hidden;
+}
+
+.mid div {
+	float: left;
+}
+
+.mid-left {
+	text-align: center;
+	width: 160px;
+	border: solid 2px #ff8000;
+	border-radius: 10px;
+	padding-left: 10px;
+	width: 160px;
+}
+
+.mid-main {
+	float: left;
+	width: 620px;
+	margin-left: 45px;
+	border-radius: 10px;
+	border: solid 1px #ff8000;
+}
+
+.menu {
+	text-align: center;
+	margin: 17px;
+	width: 170px;
+	border-radius: 10px;
+	font-size: 1.3em;
+	color: #fff;
+}
+
+.menu:hover {
+	background: #ae5700 !important;
+}
+
+.menu:active {
+	color: #ff8000 !important;
+}
+
+.clicked {
+	background: #ae5700;
+	color: #ff8000;
+}
+
+.shop {
+	margin: 4px;
+	width: 300px;
+	background: #fff;
+	border-radius: 25px;
+	height: 100px;
+	border-right: solid 1px #f4f4f4;
+	border-bottom: solid 2px #f4f4f4;
+}
+
+.shop:hover {
+	border-right: solid 1px #c0c0c0;
+	border-bottom: solid 2px #c0c0c0;
+	background: #fff;
+}
+
+.shop * {
+	float: left;
+}
+
+#shop-mid {
+	width: 115px;
+	height: 100px;
+	margin-left: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: keep-all;
+	position: relative;
+	margin-left: 5px;
+}
+
+.shoppic {
+	width: 100px;
+	height: 100px;
+	border-radius: 25px;
+}
+
+.shop-msg {
+	color: #000;
+	font-size: 1em;
+}
+
+.shop-name {
+	font-size: 1.2em;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	word-break: keep-all;
+	white-space: nowrap;
+	font-weight: bold
+}
+
+.des {
+	font-size: 0.8em;
+}
+
+.priceline {
+	color: red;
+	font-size: 1.2em;
+	position: absolute;
+	bottom: 0;
+}
+
+.price-sign {
+	font-size: 0.8em;
+	bottom: 0;
+}
+
+#add {
+	float: right;
+	margin-top: 30px;
+	margin-right: 25px;
+}
+
+#add img {
+	width: 30px;
+	height: 30px;
+}
+
+
+#user img {
+	visibility: visible;
+	border-radius: 50px;
+	width: 80px;
+	height: 80px;
+}
+
+#user * {
+	width: 190px;
+}
+
+#user:hover {
+	right: 0px;
+	visibility: visible;
+}
+
+#logout {
+	width: auto;
+	position: fixed;
+	margin: -80px 0 0 140px;
+}
+
+#footer {
+	position: absolute; 
+	bottom: 0;
+	text-align: center;
+	height: 80px;
+	width: 100%;
+	box-sizing: content-box;
+}
+
+#footer table {
+	margin: 0 auto;
+	font-size: 0.8em;
+}

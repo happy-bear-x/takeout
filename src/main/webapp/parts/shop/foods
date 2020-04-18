@@ -1,0 +1,32 @@
+<%@page pageEncoding="UTF-8"%> 
+<%@page import="com.takeout.tool.Num"%>
+	<% ResultSet rs=Shop.getShopFoods(shop); 
+		boolean nofoods=true;
+		String pic=null;
+		while (rs.next()) {
+			nofoods=false;
+			if(rs.getString("pic")==null){
+				pic="/img/foods/nopic.jpg";
+			}else{
+				pic=rs.getString("pic");
+			}
+	%>
+<div class="shop">
+	<div class="shop-row">
+		<img class="shoppic" src="<%=pic %>">
+	</div>
+	<div class="shop-row" id="shop-mid">
+		<input class="foodid" type="hidden" value='<%=rs.getString("foodid")%>'>
+		<div class="shop-name"><%=rs.getString("name")%></div>
+		<div class="des"><%=rs.getString("des")%></div>
+		<div class="priceline">
+			<div class="price-sign">￥</div>
+			<div class="price"><%=Num.formatDouble(rs.getDouble("price"))%></div>
+		</div>
+	</div>
+	<div class="shop-row" id="add">
+		<a href='AddCart?id=<%=rs.getString("foodid") + "&name=" + shop%>'> <img
+			class="addbut" alt="添加到购物车" src="img/shop/add.png"></a>
+	</div>
+</div>
+<% } if(nofoods){ out.print("商家暂未添加商品!"); } %>

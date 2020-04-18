@@ -1,0 +1,17 @@
+<%@page pageEncoding="UTF-8"%>
+<form name="form" action="NewFood" method="post" class="managebox"
+	id="newfood" onsubmit="return checkfact(form)"
+	enctype="multipart/form-data">
+	<table>
+		<tr>
+			<td>输入菜名： <input type="text" name="name" />
+		<tr>
+			<td>输入价格： <input type="number" step="0.01" name="price" value="0">
+		<tr>
+			<td>上传图片： <input type="file" name="pic">
+		<tr>
+			<td>添加描述： <input type="text" name="des">
+		<tr>
+			<td><input type="submit" name="sub" value="添加" />
+	</table>
+</form>

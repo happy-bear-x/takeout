@@ -1,0 +1,68 @@
+<%@page import="com.takeout.tool.Num"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Map"%>
+<%@page import="com.model.Cart"%>
+<%@page import="java.util.List"%>
+<%@ page pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="./css/cart.css" type="text/css">
+<div class="cart">
+	<div class="foodbox">
+		<div id="cart-title">
+			<a href="javascript:void(0)"><img id="min" title="最小化" alt="隐藏"
+				src="./img/shop/min.png"></a>
+			<a href="javascript:void(0)" id="cleancart">清空购物车</a>
+		</div>
+		<%
+			double oneprice = 0;
+			double tprice = 0;
+			int num = 0;
+			int tnum = 0;
+			String user = null;
+			Map<String, String> map;
+			List<Map<String, String>> list;
+			if (session.getAttribute("user") != null) {
+				user = (String) session.getAttribute("user");
+				list = Cart.getUserCart(user, shop);
+				if (list.isEmpty()) {
+					out.print("购物车空空如也~");
+				}
+				for (int i = 0; i < list.size(); i++) {
+					map = list.get(i);
+					num = Integer.parseInt(map.get("num"));
+					oneprice = Double.parseDouble(map.get("price"));
+					tprice += oneprice * num;
+					tnum += num;
+		%>
+		<div class="cart-food">
+			<img class="cart-pic" src="<%=map.get("pic")%>">
+			<div class="foodname"><%=map.get("name")%></div>
+			<div class="cart-price">
+				x<%=num%>
+				￥<%=Num.formatDouble(oneprice * num)%>
+			</div>
+		</div>
+
+		<%
+			}
+				Map<String, String> account = new HashMap<>();
+				account.put("uer", user);
+				account.put("shop", request.getParameter("shop"));
+				account.put("num", tnum + "");
+				account.put("price", tprice + "");
+				session.setAttribute("account", account);
+			} else {
+				out.print("您还没有<a href='./Login'>登录</a>！");
+			}
+		%>
+	</div>
+	<div class="cartline">
+		<div id="total">
+			总计：<%=tnum%>件
+			<%=Num.formatDouble(tprice)%>元
+		</div>
+		<a id="suba" href="./pay.jsp"><span id="sub">去结算</span></a>
+	</div>
+</div>
+<a href="javascript:void(0)" title="购物车" class="cartlogo"><span
+	id="numball"><%=tnum%></span></a>

@@ -1,0 +1,43 @@
+.mid-right {
+	margin: 5px 0px 5px 10px;
+	width: 200px;
+	background: #fff;
+	padding: 5px 5px;
+	box-sizing: border-box;
+	border-radius: 15px;
+}
+
+.mid-right img {
+	width: 15px;
+	height: 15px;
+}
+.judge{
+	margin:5px auto;
+	border:solid 1px #ff8000;
+	box-sizing: border-box;
+	padding:5px;
+	border-radius: 10px;
+	background:#ffe;
+}
+.judgetitle {
+	width: 100%;
+	text-align: center;
+}
+
+.user {
+	width: 66px;
+	height: 21px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: keep-all;
+	color: #0c0c0c;
+}
+
+.judgement {
+	width: 100%;
+}
+
+.load {
+	width: 100%;
+	text-align: center;
+}

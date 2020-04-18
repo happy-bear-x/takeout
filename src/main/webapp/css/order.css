@@ -1,0 +1,103 @@
+.order {
+	padding: 2px;
+	margin: 15px;
+	width: 590px;
+	background: #fff;
+	border-radius: 25px;
+	height: 150px;
+	box-shadow: 10px 10px 30px #ff9e3e;
+}
+
+.order:hover {
+	box-shadow: 10px 10px 30px #ff8000;
+}
+
+.orderbox {
+}
+
+.shopline {
+	width: 100%;
+	height: 100px;
+}
+
+.shoppic {
+	width: 100px;
+	height: 100px;
+	mragin-right: 5px;
+}
+
+.shopname {
+	width: 395px;
+	font-size: 20px;
+}
+
+.state {
+	width: 80px;
+	font-size: 14px;
+}
+
+.orderline {
+	margin-top: 10px;
+	border-top: solid 1px #c0c0c0;
+	width: 100%;
+}
+.ordermsg{
+	width:480px;
+	display:none;
+	color:#ff0000;
+}
+
+.price {
+	margin-left: 30px;
+	font-size: 20px;
+}
+
+.orderline a {
+	float: right;
+	margin-right: 15px;
+	color: #0000ff;
+	font-size: 20px;
+}
+
+.judge {
+	margin-left: 100px;
+	width: 400px;
+	display:none;
+}
+
+.score {
+	margin-top:5px;
+	width: 200px;
+}
+
+.score img {
+	width: 25px;
+	height: 25px;
+}
+
+.judgment {
+	resize: none;
+	width: 400px;
+	height: 50px;
+	box-sizing: border-box
+}
+
+.submit {
+	float: right;
+	margin-top: 5px;
+	background: #c0c0c0;
+	border:solid 1px #c0c0c0;
+	width: 80px;
+	height: 30px;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+.cancel{
+	margin-top:5px;
+	float:left;
+}
+.load{
+	width:100%;
+	text-align:center;
+	margin:10px auto;
+}

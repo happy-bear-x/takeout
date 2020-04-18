@@ -1,0 +1,12 @@
+<%@page pageEncoding="UTF-8"%>
+<footer id="footer">
+<hr width="100%">
+	<table>
+		<tr>
+			<th>Copyright © 2018 - 2019 Xiong. All Rights Reserved</th>
+		</tr>
+		<tr>
+			<th>--xiong©版权所有--</th>
+		</tr>
+	</table>
+</footer>
