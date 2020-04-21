@@ -1,4 +1,4 @@
-package com.takeout.pojo;
+package com.takeout.entity;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

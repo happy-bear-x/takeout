@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.takeout.mapper.VoucherMapper" >
-  <resultMap id="BaseResultMap" type="com.takeout.pojo.Voucher" >
+  <resultMap id="BaseResultMap" type="com.takeout.entity.Voucher" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user" property="user" jdbcType="VARCHAR" />
     <result column="worth" property="worth" jdbcType="INTEGER" />
@@ -72,7 +72,7 @@
   <sql id="Base_Column_List" >
     id, user, worth, gettime, endtime, isused, condition, shop
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.pojo.VoucherExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.entity.VoucherExample" >
     select
     <if test="distinct" >
       distinct
@@ -96,13 +96,13 @@
     delete from voucher
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.takeout.pojo.VoucherExample" >
+  <delete id="deleteByExample" parameterType="com.takeout.entity.VoucherExample" >
     delete from voucher
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.takeout.pojo.Voucher" >
+  <insert id="insert" parameterType="com.takeout.entity.Voucher" >
     insert into voucher (id, user, worth, 
       gettime, endtime, isused, 
       condition, shop)
@@ -110,7 +110,7 @@
       #{gettime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, #{isused,jdbcType=TINYINT}, 
       #{condition,jdbcType=INTEGER}, #{shop,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.takeout.pojo.Voucher" >
+  <insert id="insertSelective" parameterType="com.takeout.entity.Voucher" >
     insert into voucher
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -165,7 +165,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.takeout.pojo.VoucherExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.takeout.entity.VoucherExample" resultType="java.lang.Integer" >
     select count(*) from voucher
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -217,7 +217,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.pojo.Voucher" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.entity.Voucher" >
     update voucher
     <set >
       <if test="user != null" >
@@ -244,7 +244,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.takeout.pojo.Voucher" >
+  <update id="updateByPrimaryKey" parameterType="com.takeout.entity.Voucher" >
     update voucher
     set user = #{user,jdbcType=VARCHAR},
       worth = #{worth,jdbcType=INTEGER},

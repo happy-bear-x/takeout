@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.takeout.mapper.UserMapper;
-import com.takeout.pojo.User;
+import com.takeout.entity.User;
 
 public class UserMapperTest {
 	private ApplicationContext context;
@@ -14,7 +14,7 @@ public class UserMapperTest {
 
 	@Before
 	public void setUp() throws Exception {
-		context = new ClassPathXmlApplicationContext("classpath:spring-dao.xml");
+		context = new ClassPathXmlApplicationContext("classpath:spring-context.xml");
 		System.out.println("context:"+context);
 		userMapper = (UserMapper) context.getBean("userMapper");
 	}

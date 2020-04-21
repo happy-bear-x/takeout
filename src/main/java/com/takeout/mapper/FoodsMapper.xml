@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.takeout.mapper.FoodsMapper" >
-  <resultMap id="BaseResultMap" type="com.takeout.pojo.Foods" >
+  <resultMap id="BaseResultMap" type="com.takeout.entity.Foods" >
     <id column="foodid" property="foodid" jdbcType="INTEGER" />
     <result column="shop" property="shop" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -70,7 +70,7 @@
   <sql id="Base_Column_List" >
     foodid, shop, name, price, pic, des
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.pojo.FoodsExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.entity.FoodsExample" >
     select
     <if test="distinct" >
       distinct
@@ -94,19 +94,19 @@
     delete from foods
     where foodid = #{foodid,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.takeout.pojo.FoodsExample" >
+  <delete id="deleteByExample" parameterType="com.takeout.entity.FoodsExample" >
     delete from foods
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.takeout.pojo.Foods" >
+  <insert id="insert" parameterType="com.takeout.entity.Foods" >
     insert into foods (foodid, shop, name, 
       price, pic, des)
     values (#{foodid,jdbcType=INTEGER}, #{shop,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{price,jdbcType=DECIMAL}, #{pic,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.takeout.pojo.Foods" >
+  <insert id="insertSelective" parameterType="com.takeout.entity.Foods" >
     insert into foods
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="foodid != null" >
@@ -149,7 +149,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.takeout.pojo.FoodsExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.takeout.entity.FoodsExample" resultType="java.lang.Integer" >
     select count(*) from foods
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -193,7 +193,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.pojo.Foods" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.entity.Foods" >
     update foods
     <set >
       <if test="shop != null" >
@@ -214,7 +214,7 @@
     </set>
     where foodid = #{foodid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.takeout.pojo.Foods" >
+  <update id="updateByPrimaryKey" parameterType="com.takeout.entity.Foods" >
     update foods
     set shop = #{shop,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},

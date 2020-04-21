@@ -2,8 +2,8 @@ package com.takeout.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.takeout.pojo.Voucher;
-import com.takeout.pojo.VoucherExample;
+import com.takeout.entity.Voucher;
+import com.takeout.entity.VoucherExample;
 
 public interface VoucherMapper {
     int countByExample(VoucherExample example);

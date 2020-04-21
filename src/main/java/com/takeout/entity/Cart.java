@@ -1,4 +1,4 @@
-package com.takeout.pojo;
+package com.takeout.entity;
 
 public class Cart {
     private String user;

@@ -2,8 +2,8 @@ package com.takeout.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.takeout.pojo.Account;
-import com.takeout.pojo.AccountExample;
+import com.takeout.entity.Account;
+import com.takeout.entity.AccountExample;
 
 public interface AccountMapper {
     int countByExample(AccountExample example);

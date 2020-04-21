@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.takeout.mapper.OrderMapper" >
-  <resultMap id="BaseResultMap" type="com.takeout.pojo.Order" >
+  <resultMap id="BaseResultMap" type="com.takeout.entity.Order" >
     <result column="ordernum" property="ordernum" jdbcType="VARCHAR" />
     <result column="user" property="user" jdbcType="VARCHAR" />
     <result column="shop" property="shop" jdbcType="VARCHAR" />
@@ -79,7 +79,7 @@
     ordernum, user, shop, foodid, num, voucher, pay, total, state, addressid, finishtime, 
     uaddition, saddition, toking
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.pojo.OrderExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.entity.OrderExample" >
     select
     <if test="distinct" >
       distinct
@@ -93,13 +93,13 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.takeout.pojo.OrderExample" >
+  <delete id="deleteByExample" parameterType="com.takeout.entity.OrderExample" >
     delete from order
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.takeout.pojo.Order" >
+  <insert id="insert" parameterType="com.takeout.entity.Order" >
     insert into order (ordernum, user, shop, 
       foodid, num, voucher, 
       pay, total, state, addressid, 
@@ -111,7 +111,7 @@
       #{finishtime,jdbcType=TIMESTAMP}, #{uaddition,jdbcType=VARCHAR}, #{saddition,jdbcType=VARCHAR}, 
       #{toking,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.takeout.pojo.Order" >
+  <insert id="insertSelective" parameterType="com.takeout.entity.Order" >
     insert into order
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="ordernum != null" >
@@ -202,7 +202,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.takeout.pojo.OrderExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.takeout.entity.OrderExample" resultType="java.lang.Integer" >
     select count(*) from order
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

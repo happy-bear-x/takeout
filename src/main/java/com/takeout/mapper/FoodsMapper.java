@@ -2,8 +2,8 @@ package com.takeout.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.takeout.pojo.Foods;
-import com.takeout.pojo.FoodsExample;
+import com.takeout.entity.Foods;
+import com.takeout.entity.FoodsExample;
 
 public interface FoodsMapper {
     int countByExample(FoodsExample example);

@@ -1,7 +1,7 @@
 package com.takeout.dao;
 
 
-import com.takeout.pojo.User;
+import com.takeout.entity.User;
 
 
 public interface UserDao {

@@ -1,4 +1,4 @@
-package com.takeout.pojo;
+package com.takeout.entity;
 
 public class JudgmentKey {
     private String ordernum;
