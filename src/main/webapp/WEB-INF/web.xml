@@ -12,7 +12,7 @@
   <!-- 加载spring配置 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring-context.xml,classpath:spring-service.xml,classpath:spring-trans.xml</param-value>
+    <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

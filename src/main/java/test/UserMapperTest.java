@@ -14,7 +14,7 @@ public class UserMapperTest {
 
 	@Before
 	public void setUp() throws Exception {
-		context = new ClassPathXmlApplicationContext("classpath:spring-context.xml");
+		context = new ClassPathXmlApplicationContext("classpath:spring-mybatis.xml");
 		System.out.println("context:"+context);
 		userMapper = (UserMapper) context.getBean("userMapper");
 	}
