@@ -3,19 +3,10 @@
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop.xsd
-        http://www.springframework.org/schema/tx
-        http://www.springframework.org/schema/tx/spring-tx.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
 
 	<!-- 加载配置文件 -->
@@ -63,13 +54,13 @@
 
 	<!-- 原始dao接口 -->
 
-	<bean
+	<!--<bean
 		id="userDao"
 		class="com.takeout.dao.UserDaoImpl">
 		<property
 			name="sqlSessionFactory"
 			ref="sqlSessionFactory" />
-	</bean>
+	</bean>-->
 
 	<!-- mapper配置 MapperFactoryBean：根据mapper接口生成代理对象 -->
 	<!-- <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean"> 
@@ -81,7 +72,7 @@
 		<!-- 指定扫描的包名 如果扫描多个包，每个包中间使用半角逗号分隔 -->
 		<property
 			name="basePackage"
-			value="mapper" />
+			value="com.takeout.mapper" />
 		<property
 			name="sqlSessionFactoryBeanName"
 			value="sqlSessionFactory" />

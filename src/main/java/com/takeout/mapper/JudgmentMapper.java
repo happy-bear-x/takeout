@@ -2,9 +2,9 @@ package com.takeout.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.takeout.entity.Judgment;
-import com.takeout.entity.JudgmentExample;
-import com.takeout.entity.JudgmentKey;
+import com.takeout.pojo.Judgment;
+import com.takeout.pojo.JudgmentExample;
+import com.takeout.pojo.JudgmentKey;
 
 public interface JudgmentMapper {
     int countByExample(JudgmentExample example);

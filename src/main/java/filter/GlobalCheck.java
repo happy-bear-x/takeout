@@ -9,14 +9,12 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
 
 import com.model.User;
 import com.takeout.tool.HtmlFilterRequest;
@@ -24,7 +22,6 @@ import com.takeout.tool.HtmlFilterRequest;
 /**
  * Servlet Filter implementation class SetCharterEncoding
  */
-@WebFilter(urlPatterns = { "/*" })
 public class GlobalCheck implements Filter {
 
 	/**
@@ -46,8 +43,6 @@ public class GlobalCheck implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
 		HttpServletRequest hrequest=new HtmlFilterRequest((HttpServletRequest) request);
 		HttpSession session = hrequest.getSession();
 		if (session.getAttribute("user") == null) {

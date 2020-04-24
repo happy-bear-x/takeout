@@ -2,8 +2,8 @@ package com.takeout.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.takeout.entity.Cart;
-import com.takeout.entity.CartExample;
+import com.takeout.pojo.Cart;
+import com.takeout.pojo.CartExample;
 
 public interface CartMapper {
     int countByExample(CartExample example);

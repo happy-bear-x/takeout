@@ -2,8 +2,8 @@ package com.takeout.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.takeout.entity.Order;
-import com.takeout.entity.OrderExample;
+import com.takeout.pojo.Order;
+import com.takeout.pojo.OrderExample;
 
 public interface OrderMapper {
     int countByExample(OrderExample example);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.takeout.mapper.CartMapper" >
-  <resultMap id="BaseResultMap" type="com.takeout.entity.Cart" >
+  <resultMap id="BaseResultMap" type="com.takeout.pojo.Cart" >
     <result column="user" property="user" jdbcType="VARCHAR" />
     <result column="shop" property="shop" jdbcType="VARCHAR" />
     <result column="foodid" property="foodid" jdbcType="INTEGER" />
@@ -68,7 +68,7 @@
   <sql id="Base_Column_List" >
     user, shop, foodid, num
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.entity.CartExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.pojo.CartExample" >
     select
     <if test="distinct" >
       distinct
@@ -82,19 +82,19 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.takeout.entity.CartExample" >
+  <delete id="deleteByExample" parameterType="com.takeout.pojo.CartExample" >
     delete from cart
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.takeout.entity.Cart" >
+  <insert id="insert" parameterType="com.takeout.pojo.Cart" >
     insert into cart (user, shop, foodid, 
       num)
     values (#{user,jdbcType=VARCHAR}, #{shop,jdbcType=VARCHAR}, #{foodid,jdbcType=INTEGER}, 
       #{num,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.takeout.entity.Cart" >
+  <insert id="insertSelective" parameterType="com.takeout.pojo.Cart" >
     insert into cart
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="user != null" >
@@ -125,7 +125,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.takeout.entity.CartExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.takeout.pojo.CartExample" resultType="java.lang.Integer" >
     select count(*) from cart
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

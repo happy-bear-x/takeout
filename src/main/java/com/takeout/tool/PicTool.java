@@ -3,12 +3,11 @@ package com.takeout.tool;
 import java.io.File;
 import java.util.UUID;
 
-import com.jspsmart.upload.SmartUpload;
 
 public class PicTool {
 	//重命名图片方法
 	//传入sumartupload对象
-	public static String renamePic(SmartUpload su, String abspath, String dir) {
+	/*public static String renamePic(SmartUpload su, String abspath, String dir) {
 		String path = abspath + dir;
 		if (su==null) {
 			return null;
@@ -31,7 +30,7 @@ public class PicTool {
 			ex.printStackTrace();
 			return null;
 		}
-	}
+	}*/
 
 	//删除图片方法
 	//传入图片路径

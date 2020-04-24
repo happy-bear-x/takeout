@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.takeout.mapper.AccountMapper" >
-  <resultMap id="BaseResultMap" type="com.takeout.entity.Account" >
+  <resultMap id="BaseResultMap" type="com.takeout.pojo.Account" >
     <id column="user" property="user" jdbcType="VARCHAR" />
     <result column="wallet" property="wallet" jdbcType="DOUBLE" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List" >
     user, wallet
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.entity.AccountExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.pojo.AccountExample" >
     select
     <if test="distinct" >
       distinct
@@ -90,17 +90,17 @@
     delete from account
     where user = #{user,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.takeout.entity.AccountExample" >
+  <delete id="deleteByExample" parameterType="com.takeout.pojo.AccountExample" >
     delete from account
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.takeout.entity.Account" >
+  <insert id="insert" parameterType="com.takeout.pojo.Account" >
     insert into account (user, wallet)
     values (#{user,jdbcType=VARCHAR}, #{wallet,jdbcType=DOUBLE})
   </insert>
-  <insert id="insertSelective" parameterType="com.takeout.entity.Account" >
+  <insert id="insertSelective" parameterType="com.takeout.pojo.Account" >
     insert into account
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="user != null" >
@@ -119,7 +119,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.takeout.entity.AccountExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.takeout.pojo.AccountExample" resultType="java.lang.Integer" >
     select count(*) from account
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -147,7 +147,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.entity.Account" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.pojo.Account" >
     update account
     <set >
       <if test="wallet != null" >
@@ -156,7 +156,7 @@
     </set>
     where user = #{user,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.takeout.entity.Account" >
+  <update id="updateByPrimaryKey" parameterType="com.takeout.pojo.Account" >
     update account
     set wallet = #{wallet,jdbcType=DOUBLE}
     where user = #{user,jdbcType=VARCHAR}

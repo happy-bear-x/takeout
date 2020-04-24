@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.takeout.mapper.JudgmentMapper" >
-  <resultMap id="BaseResultMap" type="com.takeout.entity.Judgment" >
+  <resultMap id="BaseResultMap" type="com.takeout.pojo.Judgment" >
     <id column="ordernum" property="ordernum" jdbcType="VARCHAR" />
     <id column="user" property="user" jdbcType="VARCHAR" />
     <result column="shop" property="shop" jdbcType="VARCHAR" />
@@ -70,7 +70,7 @@
   <sql id="Base_Column_List" >
     ordernum, user, shop, score, judge, judgetime
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.entity.JudgmentExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.takeout.pojo.JudgmentExample" >
     select
     <if test="distinct" >
       distinct
@@ -84,25 +84,25 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.takeout.entity.JudgmentKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.takeout.pojo.JudgmentKey" >
     select 
     <include refid="Base_Column_List" />
     from judgment
     where ordernum = #{ordernum,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.takeout.entity.JudgmentKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.takeout.pojo.JudgmentKey" >
     delete from judgment
     where ordernum = #{ordernum,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.takeout.entity.JudgmentExample" >
+  <delete id="deleteByExample" parameterType="com.takeout.pojo.JudgmentExample" >
     delete from judgment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.takeout.entity.Judgment" >
+  <insert id="insert" parameterType="com.takeout.pojo.Judgment" >
     insert into judgment (ordernum, user, shop, 
       score, judge, judgetime
       )
@@ -110,7 +110,7 @@
       #{score,jdbcType=DECIMAL}, #{judge,jdbcType=VARCHAR}, #{judgetime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.takeout.entity.Judgment" >
+  <insert id="insertSelective" parameterType="com.takeout.pojo.Judgment" >
     insert into judgment
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="ordernum != null" >
@@ -153,7 +153,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.takeout.entity.JudgmentExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.takeout.pojo.JudgmentExample" resultType="java.lang.Integer" >
     select count(*) from judgment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -197,7 +197,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.entity.Judgment" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.takeout.pojo.Judgment" >
     update judgment
     <set >
       <if test="shop != null" >
@@ -216,7 +216,7 @@
     where ordernum = #{ordernum,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.takeout.entity.Judgment" >
+  <update id="updateByPrimaryKey" parameterType="com.takeout.pojo.Judgment" >
     update judgment
     set shop = #{shop,jdbcType=VARCHAR},
       score = #{score,jdbcType=DECIMAL},

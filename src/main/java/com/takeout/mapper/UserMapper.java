@@ -2,8 +2,8 @@ package com.takeout.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import com.takeout.entity.User;
-import com.takeout.entity.UserExample;
+import com.takeout.pojo.User;
+import com.takeout.pojo.UserExample;
 
 public interface UserMapper {
     int countByExample(UserExample example);

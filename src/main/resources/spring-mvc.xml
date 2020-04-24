@@ -11,10 +11,14 @@
 		http://cxf.apache.org/jaxws
    		http://cxf.apache.org/schemas/jaxws.xsd">
 
+<!--    开启注解-->
+    <mvc:annotation-driven></mvc:annotation-driven>
 <!--    controller 扫描-->
     <context:component-scan base-package="com.takeout.controller">
-
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+<!--    静态资源-->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
     <!-- ResponseBody返回字符串带双引号解决 -->
     <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
         <constructor-arg value="UTF-8" index="0"/>

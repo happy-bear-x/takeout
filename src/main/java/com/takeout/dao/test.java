@@ -6,7 +6,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.takeout.entity.User;
+import com.takeout.pojo.User;
 
 public class test {
 

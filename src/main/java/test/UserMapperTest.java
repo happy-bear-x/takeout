@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.takeout.mapper.UserMapper;
-import com.takeout.entity.User;
+import com.takeout.pojo.User;
 
 public class UserMapperTest {
 	private ApplicationContext context;
